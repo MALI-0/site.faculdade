@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let saldo = 0
+      let sair = false
+      while(!sair){
+        let opcao = prompt("bem vindo! \n"+
+        "1 -> depositar\n" +
+        "2 -> consultar \n" +
+        "3 -> sacar \n" +
+                        "4 ->sair" )
+       
+        if(opcao == 4){
+          alert("obrigado, ate a proxima")
+          sair = true
+        } else if(opcao == 1){
+          let valor = prompt("Qual o valor do deposito?")
+          saldo = saldo + parseFloat(valor)
+          alert("deposito com sucesso")
+        } else if(opcao==2){
+          alert("seu saldo é de: "+ saldo)
+        } else if(opcao==3) {
+          let valor = Number(prompt("Digite o valor que voê deseja sacar: "))
+          if(valor> saldo) {
+            alert("saldo insuficiente")
+            continue 
+
+            saldo -= valor
+          }
+
+        }
+
+      
+        else {
+          alert("opção invalida, tente novamente")
+        }    
+      }
+    </script>
+</body>
+</html>
